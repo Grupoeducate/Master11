@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planes de Mejoramiento - Master Elite 11</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --color-matematicas: #FA8349;
+      --color-lenguaje: #FFAF10;
+      --color-naturales: #38B849;
+      --color-sociales: #3F7ABE;
+      --color-ingles: #825EA8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fa;
+      color: #17334B;
+      padding-bottom: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .logo-container img {
+      max-height: 60px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    .logo-banner img {
+      width: 100%;
+      max-width: 600px;
+      margin: 1.5rem auto;
+      display: block;
+    }
+
+    .intro-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .area-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s;
+      border: 3px solid transparent;
+    }
+
+    .area-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .area-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid transparent;
+      z-index: 0;
+      animation: rotate-border 2s linear infinite;
+      opacity: 0;
+    }
+
+    .area-card:hover::before {
+      opacity: 1;
+    }
+
+    .area-card[data-area="matematicas"] {
+      border-color: var(--color-matematicas);
+    }
+    .area-card[data-area="matematicas"]::before {
+      border-color: var(--color-matematicas);
+    }
+
+    .area-card[data-area="lenguaje"] {
+      border-color: var(--color-lenguaje);
+    }
+    .area-card[data-area="lenguaje"]::before {
+      border-color: var(--color-lenguaje);
+    }
+
+    .area-card[data-area="naturales"] {
+      border-color: var(--color-naturales);
+    }
+    .area-card[data-area="naturales"]::before {
+      border-color: var(--color-naturales);
+    }
+
+    .area-card[data-area="sociales"] {
+      border-color: var(--color-sociales);
+    }
+    .area-card[data-area="sociales"]::before {
+      border-color: var(--color-sociales);
+    }
+
+    .area-card[data-area="ingles"] {
+      border-color: var(--color-ingles);
+    }
+    .area-card[data-area="ingles"]::before {
+      border-color: var(--color-ingles);
+    }
+
+    @keyframes rotate-border {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .area-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .area-card h3 {
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .components-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: none;
+    }
+
+    .components-container.active {
+      display: block;
+    }
+
+    .component-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.75rem 0;
+    }
+
+    .component-item span {
+      font-size: 1rem;
+    }
+
+    .btn-acceso {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #17334B;
+      color: white;
+    }
+
+    footer img {
+      max-height: 30px;
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      .component-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://grupoeducatecolombia.com/assets/images/logo/gec-logo-02.png" alt="Grupo Educate Colombia">
+    </div>
+    <h1>Planes de Mejoramiento</h1>
+    <div class="logo-banner">
+      <img src="https://github.com/Grupoeducate/Master11/blob/main/LOGOS%20MASTER%20ELITE%20Y%20PRO_Mesa%20de%20trabajo%201.png?raw=true" alt="Master Elite 11">
+    </div>
+  </header>
+
+  <section class="intro-box">
+    <h2>¡Bienvenido al portal de Planes de Mejoramiento!</h2>
+    <p>Aquí podrás acceder a recursos diseñados especialmente para reforzar tus conocimientos y mejorar tu desempeño académico.</p>
+    <p>Un plan de mejoramiento es una estrategia de acompañamiento que te permitirá trabajar de forma autónoma los componentes que presentan más dificultad, guiándote paso a paso por medio de material estructurado.</p>
+    <ul>
+      <li>✅ Selecciona un área del conocimiento.</li>
+      <li>✅ Haz clic sobre su tarjeta.</li>
+      <li>✅ Selecciona el componente que quieres explorar.</li>
+      <li>✅ Ingresa al recurso o guía correspondiente dando clic en el botón “Ingresar”.</li>
+    </ul>
+  </section>
+
+  <section class="areas-grid">
+    <div class="area-card" data-area="matematicas" onclick="mostrarComponentes('matematicas')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2759/2759168.png" alt="Matemáticas">
+      <h3>Matemáticas</h3>
+    </div>
+    <div class="area-card" data-area="lenguaje" onclick="mostrarComponentes('lenguaje')">
+      <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Lenguaje">
+      <h3>Lenguaje</h3>
+    </div>
+    <div class="area-card" data-area="naturales" onclick="mostrarComponentes('naturales')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2759/2759168.png" alt="Ciencias Naturales">
+      <h3>Ciencias Naturales</h3>
+    </div>
+    <div class="area-card" data-area="sociales" onclick="mostrarComponentes('sociales')">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174249.png" alt="Ciencias Sociales">
+      <h3>Ciencias Sociales</h3>
+    </div>
+    <div class="area-card" data-area="ingles" onclick="mostrarComponentes('ingles')">
+      <img src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="Inglés">
+      <h3>Inglés</h3>
+    </div>
+  </section>
+
+  <section class="components-container" id="componentes">
+    <h2>Componentes</h2>
+    <div id="lista-componentes"></div>
+  </section>
+
+  <footer>
+    <img src="https://grupoeducatecolombia.com/assets/images/logo/gec-logo-02.png" alt="Grupo Educate Colombia">
+    <p>© 2025 Grupo Educate Colombia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const componentesPorArea = {
+      matematicas: ["Número - Variacional", "Geométrico - Métrico", "Aleatorio"],
+      lenguaje: ["Semántico", "Sintáctico", "Pragmático"],
+      naturales: ["Entorno Biológico", "Entorno Químico", "Entorno Físico", "Ciencia, Tecnología y Sociedad (CTS)"],
+      sociales: ["Ciencias Sociales", "Competencias Ciudadanas"],
+      ingles: ["Trabajemos desde la Parte 1 hasta la Parte 7"]
+    };
+
+    function mostrarComponentes(area) {
+      const contenedor = document.getElementById("componentes");
+      const lista = document.getElementById("lista-componentes");
+      lista.innerHTML = "";
+      const componentes = componentesPorArea[area] || [];
+      componentes.forEach(nombre => {
+        const div = document.createElement("div");
+        div.className = "component-item";
+        div.innerHTML = `<span>${nombre}</span><a href="#" class="btn-acceso" style="background: var(--color-${area});">Ingresar</a>`;
+        lista.appendChild(div);
+      });
+      contenedor.classList.add("active");
+      contenedor.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
