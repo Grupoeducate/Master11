@@ -30,27 +30,32 @@
 
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 0.5rem 0.5rem;
+      background-color: #17334B;
     }
 
     .logo-container img {
-      max-height: 60px;
+      width: 100%;
+      max-width: 240px;
+      margin: 1rem auto;
+      display: block;
     }
 
     h1 {
       font-size: 2rem;
       margin: 1rem 0;
+      color: white;
     }
 
     .logo-banner img {
       width: 100%;
-      max-width: 600px;
-      margin: 1.5rem auto;
+      max-width: 700px;
+      margin: 1rem auto;
       display: block;
     }
 
     .intro-box {
-      max-width: 800px;
+      max-width: 950px;
       margin: 0 auto;
       background: #fff;
       padding: 1.5rem 2rem;
@@ -58,6 +63,36 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       margin-bottom: 2rem;
     }
+
+    .intro-box h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #17334B;
+    }
+
+    .intro-box p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .intro-box strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-box ol {
+      padding-left: 1.2rem;
+    }
+
+    .intro-box li {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .intro-box li:nth-child(1)::marker { color: var(--color-matematicas); }
+    .intro-box li:nth-child(2)::marker { color: var(--color-lenguaje); }
+    .intro-box li:nth-child(3)::marker { color: var(--color-naturales); }
+    .intro-box li:nth-child(4)::marker { color: var(--color-sociales); }
 
     .areas-grid {
       display: grid;
@@ -76,7 +111,7 @@
       cursor: pointer;
       position: relative;
       transition: transform 0.3s;
-      border: 3px solid transparent;
+      border: 2px solid transparent;
     }
 
     .area-card:hover {
@@ -91,7 +126,7 @@
       height: 100%;
       width: 100%;
       border-radius: 12px;
-      border: 3px solid transparent;
+      border: 1px solid transparent;
       z-index: 0;
       animation: rotate-border 2s linear infinite;
       opacity: 0;
@@ -107,28 +142,24 @@
     .area-card[data-area="matematicas"]::before {
       border-color: var(--color-matematicas);
     }
-
     .area-card[data-area="lenguaje"] {
       border-color: var(--color-lenguaje);
     }
     .area-card[data-area="lenguaje"]::before {
       border-color: var(--color-lenguaje);
     }
-
     .area-card[data-area="naturales"] {
       border-color: var(--color-naturales);
     }
     .area-card[data-area="naturales"]::before {
       border-color: var(--color-naturales);
     }
-
     .area-card[data-area="sociales"] {
       border-color: var(--color-sociales);
     }
     .area-card[data-area="sociales"]::before {
       border-color: var(--color-sociales);
     }
-
     .area-card[data-area="ingles"] {
       border-color: var(--color-ingles);
     }
@@ -156,9 +187,9 @@
     }
 
     .components-container {
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 1.2rem;
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -174,7 +205,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #e0e0e0;
-      padding: 0.75rem 0;
+      padding: 0.3rem 0.2rem;
     }
 
     .component-item span {
@@ -182,12 +213,23 @@
     }
 
     .btn-acceso {
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       border-radius: 6px;
       color: white;
       font-weight: 500;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-acceso:hover {
+      transform: scale(1.08);
+      animation: pulse 0.8s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     footer {
@@ -199,8 +241,10 @@
     }
 
     footer img {
-      max-height: 30px;
-      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 200px;
+      margin: 1rem auto;
+      display: block;
     }
 
     @media screen and (max-width: 500px) {
@@ -213,84 +257,108 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="https://grupoeducatecolombia.com/assets/images/logo/gec-logo-02.png" alt="Grupo Educate Colombia">
-    </div>
-    <h1>Planes de Mejoramiento</h1>
-    <div class="logo-banner">
-      <img src="https://github.com/Grupoeducate/Master11/blob/main/LOGOS%20MASTER%20ELITE%20Y%20PRO_Mesa%20de%20trabajo%201.png?raw=true" alt="Master Elite 11">
-    </div>
-  </header>
+<header>
+  <div class="logo-container">
+    <img src="https://raw.githubusercontent.com/Grupoeducate/Master11/refs/heads/main/GRUPOEDUCATE.png" alt="Grupo Educate Colombia">
+  </div>
+  <h1>¡Bienvenido al portal de Planes de Mejoramiento!</h1>
+</header>
+<div class="logo-banner">
+  <img src="https://raw.githubusercontent.com/Grupoeducate/Master11/refs/heads/main/MASTER11.png" alt="Master Elite 11">
+</div>
+<div class="intro-box">
+  <p>Este espacio digital te ofrece un acceso directo a recursos educativos, diseñados meticulosamente para reforzar tus conocimientos y optimizar tu desempeño académico. <b>Nuestra misión </b> es acompañarte en tu trayectoria educativa, transformando cada desafío en una valiosa oportunidad de crecimiento. <br><br> Para comprender cómo te beneficiaremos, es fundamental entender: </p>
+  <h2>¿Qué es un Plan de Mejoramiento?</h2>
+  <p>Un Plan de Mejoramiento es una estrategia de acompañamiento pedagógico, diseñada para que trabajes de forma autónoma en aquellos componentes o áreas que presenten mayor dificultad. Serás guiado(a) paso a paso, utilizando material estructurado y de alta calidad que te permitirá consolidar tus bases y profundizar en conceptos clave. Es tu aliado estratégico para superar obstáculos y alcanzar tus metas académicas con confianza. </p>
+  <strong>✅ ¿Cómo puedes ver las actividades de los planes de mejoramiento?</strong>
+  <ol>
+    <li>Selecciona un área del conocimiento.</li>
+    <li>Haz clic sobre su tarjeta.</li>
+    <li>Selecciona el componente que quieres observar.</li>
+    <li>Ingresa al recurso o guía correspondiente dando clic en el botón “Ingresar”.</li>
+  </ol>
+</div>
+<!-- TARJETAS DE ÁREAS -->
+<div class="areas-grid">
+  <div class="area-card" data-area="matematicas">
+    <img src="https://cdn-icons-png.flaticon.com/512/1048/1048928.png" alt="Matemáticas">
+    <h3>Matemáticas</h3>
+  </div>
+  <div class="area-card" data-area="lenguaje">
+    <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Lectura Crítica">
+    <h3>Lectura Crítica</h3>
+  </div>
+  <div class="area-card" data-area="naturales">
+    <img src="https://cdn-icons-png.flaticon.com/512/2759/2759168.png" alt="Ciencias Naturales">
+    <h3>Ciencias Naturales</h3>
+  </div>
+  <div class="area-card" data-area="sociales">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174249.png" alt="Ciencias Sociales">
+    <h3>Ciencias Sociales</h3>
+  </div>
+  <div class="area-card" data-area="ingles">
+    <img src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="Inglés">
+    <h3>Inglés</h3>
+  </div>
+</div>
+<!-- CONTENEDOR DE COMPONENTES -->
+<div id="components" class="components-container"></div>
+<footer>
+  <img src="https://raw.githubusercontent.com/Grupoeducate/Master11/refs/heads/main/GRUPOEDUCATE.png" alt="Grupo Educate Colombia">
+  <H2>¡Tu camino al éxito académico!</H2>
+  <p>&copy; 2025 Grupo Educate Colombia. Todos los derechos reservados.</p>
+</footer>
+<script>
+  const areaCards = document.querySelectorAll('.area-card');
+  const componentsContainer = document.getElementById('components');
 
-  <section class="intro-box">
-    <h2>¡Bienvenido al portal de Planes de Mejoramiento!</h2>
-    <p>Aquí podrás acceder a recursos diseñados especialmente para reforzar tus conocimientos y mejorar tu desempeño académico.</p>
-    <p>Un plan de mejoramiento es una estrategia de acompañamiento que te permitirá trabajar de forma autónoma los componentes que presentan más dificultad, guiándote paso a paso por medio de material estructurado.</p>
-    <ul>
-      <li>✅ Selecciona un área del conocimiento.</li>
-      <li>✅ Haz clic sobre su tarjeta.</li>
-      <li>✅ Selecciona el componente que quieres explorar.</li>
-      <li>✅ Ingresa al recurso o guía correspondiente dando clic en el botón “Ingresar”.</li>
-    </ul>
-  </section>
+  const componentes = {
+    matematicas: [
+      { nombre: 'Numérico - Variacional', archivo: 'Pmnumerico', color: '--color-matematicas' },
+      { nombre: 'Geométrico - Métrico', archivo: 'Pmgeometrico', color: '--color-matematicas' },
+      { nombre: 'Aleatorio', archivo: 'PMALEATORIO', color: '--color-matematicas' }
+    ],
+    lenguaje: [
+      { nombre: 'Semántico', archivo: 'PMSEMANTICO', color: '--color-lenguaje' },
+      { nombre: 'Sintáctico', archivo: 'PMSINTACTICO', color: '--color-lenguaje' },
+      { nombre: 'Pragmático', archivo: 'PMPRAGMATICO', color: '--color-lenguaje' }
+    ],
+    naturales: [
+      { nombre: 'Entorno Biológico', archivo: 'PMBIOLOGICO', color: '--color-naturales' },
+      { nombre: 'Entorno Químico', archivo: 'PMQUIMICO', color: '--color-naturales' },
+      { nombre: 'Entorno Físico', archivo: 'PMFISICO', color: '--color-naturales' },
+      { nombre: 'Ciencia, Tecnología y Sociedad (CTS)', archivo: 'PMCTS', color: '--color-naturales' }
+    ],
+    sociales: [
+      { nombre: 'Ciencias Sociales', archivo: 'PMSOCIALES', color: '--color-sociales' },
+      { nombre: 'Competencias Ciudadanas', archivo: 'PMCIUDADANA', color: '--color-sociales' }
+    ],
+    ingles: [
+      { nombre: 'Trabajemos desde la Parte 1 hasta la Parte 7', archivo: 'PMINGLES', color: '--color-ingles' }
+    ]
+  };
 
-  <section class="areas-grid">
-    <div class="area-card" data-area="matematicas" onclick="mostrarComponentes('matematicas')">
-      <img src="https://cdn-icons-png.flaticon.com/512/2759/2759168.png" alt="Matemáticas">
-      <h3>Matemáticas</h3>
-    </div>
-    <div class="area-card" data-area="lenguaje" onclick="mostrarComponentes('lenguaje')">
-      <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Lenguaje">
-      <h3>Lenguaje</h3>
-    </div>
-    <div class="area-card" data-area="naturales" onclick="mostrarComponentes('naturales')">
-      <img src="https://cdn-icons-png.flaticon.com/512/2759/2759168.png" alt="Ciencias Naturales">
-      <h3>Ciencias Naturales</h3>
-    </div>
-    <div class="area-card" data-area="sociales" onclick="mostrarComponentes('sociales')">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174249.png" alt="Ciencias Sociales">
-      <h3>Ciencias Sociales</h3>
-    </div>
-    <div class="area-card" data-area="ingles" onclick="mostrarComponentes('ingles')">
-      <img src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="Inglés">
-      <h3>Inglés</h3>
-    </div>
-  </section>
+  areaCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const area = card.getAttribute('data-area');
+      const items = componentes[area];
 
-  <section class="components-container" id="componentes">
-    <h2>Componentes</h2>
-    <div id="lista-componentes"></div>
-  </section>
-
-  <footer>
-    <img src="https://grupoeducatecolombia.com/assets/images/logo/gec-logo-02.png" alt="Grupo Educate Colombia">
-    <p>© 2025 Grupo Educate Colombia. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    const componentesPorArea = {
-      matematicas: ["Número - Variacional", "Geométrico - Métrico", "Aleatorio"],
-      lenguaje: ["Semántico", "Sintáctico", "Pragmático"],
-      naturales: ["Entorno Biológico", "Entorno Químico", "Entorno Físico", "Ciencia, Tecnología y Sociedad (CTS)"],
-      sociales: ["Ciencias Sociales", "Competencias Ciudadanas"],
-      ingles: ["Trabajemos desde la Parte 1 hasta la Parte 7"]
-    };
-
-    function mostrarComponentes(area) {
-      const contenedor = document.getElementById("componentes");
-      const lista = document.getElementById("lista-componentes");
-      lista.innerHTML = "";
-      const componentes = componentesPorArea[area] || [];
-      componentes.forEach(nombre => {
-        const div = document.createElement("div");
-        div.className = "component-item";
-        div.innerHTML = `<span>${nombre}</span><a href="#" class="btn-acceso" style="background: var(--color-${area});">Ingresar</a>`;
-        lista.appendChild(div);
+      if (!items) return;
+      let html = `<h3 style="margin-bottom:1rem">Componentes del área de ${card.textContent}</h3>`;
+      items.forEach(comp => {
+        const color = getComputedStyle(document.documentElement).getPropertyValue(comp.color);
+        const link = `https://docs.google.com/gview?url=https://raw.githubusercontent.com/Grupoeducate/Master11/main/${comp.archivo}.pdf&embedded=true`;
+        html += `
+          <div class="component-item">
+            <span>${comp.nombre}</span>
+            <a href="${link}" class="btn-acceso" target="_blank" style="background:${color}">Ingresar</a>
+          </div>`;
       });
-      contenedor.classList.add("active");
-      contenedor.scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+      componentsContainer.innerHTML = html;
+      componentsContainer.classList.add('active');
+      componentsContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
